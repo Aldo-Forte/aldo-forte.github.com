@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Dark Terminal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #06060d;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .preview1 {
+      background: #0a0a0f;
+      border-radius: 12px;
+      padding: 40px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #e0e0e0;
+      border: 1px solid #1a1a2e;
+      position: relative;
+      overflow: hidden;
+      max-width: 720px;
+      width: 100%;
+    }
+    .preview1::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #00ff88, #00b8ff, #7c3aed);
+    }
+    .grid-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .p1-prompt { color: #00ff88; font-size: 11px; margin-bottom: 4px; }
+    .p1-name { font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1.1; margin: 8px 0 4px; }
+    .p1-role { font-size: 12px; color: #00b8ff; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
+    .p1-bio { font-size: 12px; color: #888; line-height: 1.8; margin-bottom: 24px; border-left: 2px solid #00ff8833; padding-left: 14px; }
+    .p1-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .p1-tag { background: #00ff8812; border: 1px solid #00ff8833; color: #00ff88; font-size: 10px; padding: 4px 10px; border-radius: 4px; }
+    .p1-tag.blue { background: #00b8ff12; border-color: #00b8ff33; color: #00b8ff; }
+    .p1-tag.purple { background: #7c3aed12; border-color: #7c3aed44; color: #a78bfa; }
+    .p1-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .p1-card { background: #0f0f1a; border: 1px solid #1e1e3a; border-radius: 8px; padding: 14px; }
+    .p1-card-title { font-size: 12px; color: #fff; font-weight: 700; margin-bottom: 4px; }
+    .p1-card-desc { font-size: 10px; color: #666; line-height: 1.5; }
+    .p1-card-lang { font-size: 9px; color: #00ff88; margin-top: 10px; }
+    .p1-links { display: flex; gap: 12px; }
+    .p1-link { background: #0f0f1a; border: 1px solid #1e1e3a; color: #888; font-size: 10px; padding: 7px 16px; border-radius: 4px; text-decoration: none; transition: all 0.2s; }
+    .p1-link:hover { border-color: #00ff8833; color: #00ff88; }
+    .p1-cursor { display: inline-block; width: 8px; height: 14px; background: #00ff88; margin-left: 2px; animation: blink 1s step-end infinite; vertical-align: middle; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+  <div class="preview1">
+    <div class="grid-bg"></div>
+    <div style="position:relative">
+      <div class="p1-prompt">~/portfolio $ whoami<span class="p1-cursor"></span></div>
+      <div class="p1-name">Il Tuo Nome</div>
+      <div class="p1-role">Backend · Data Analyst · AI Enthusiast</div>
+      <div class="p1-bio">
+        Costruisco sistemi che trasformano dati in insight.<br>
+        Python, SQL, ML models — dal raw data alla produzione.
+      </div>
+      <div class="p1-tags">
+        <span class="p1-tag">Python</span>
+        <span class="p1-tag">FastAPI</span>
+        <span class="p1-tag blue">PostgreSQL</span>
+        <span class="p1-tag blue">Pandas</span>
+        <span class="p1-tag purple">LangChain</span>
+        <span class="p1-tag purple">PyTorch</span>
+      </div>
+      <div class="p1-projects">
+        <div class="p1-card">
+          <div class="p1-card-title">DataPipeline X</div>
+          <div class="p1-card-desc">ETL pipeline scalabile per real-time analytics</div>
+          <div class="p1-card-lang">● Python</div>
+        </div>
+        <div class="p1-card">
+          <div class="p1-card-title">AI Assistant</div>
+          <div class="p1-card-desc">Chatbot RAG con LangChain + ChromaDB</div>
+          <div class="p1-card-lang">● Python</div>
+        </div>
+      </div>
+      <div class="p1-links">
+        <a class="p1-link" href="#">GitHub</a>
+        <a class="p1-link" href="#">LinkedIn</a>
+        <a class="p1-link" href="#">Email</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
